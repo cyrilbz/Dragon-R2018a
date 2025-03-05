@@ -1,3 +1,6 @@
+# Original work is from https://github.com/JordanHembrow5/DRAGoN
+Compared to the original repository: I adapted the code so it runs using matlab R2018a, whithout the statistics and machine learning toolbox. I added a "main.m" program to lauch simulation(s) an plot a few things, a "compare_results.m" program that is used to compare results, and the "aggregate.m" to compute statistics and compare two series of results. I also rewrote the curvature computation so it does not use an arbitrary length scale (now the curvature is computed as kappa=d''/((1+d'²)^3/2), with d the distance between a filament pixel and the straight line passing through both filaments ends, d' and d'' being its first and second derivative, respectively). The new mean absolute curvature variable is "new_curv". Testing data can be downloaded from the original repository.
+
 # DRAGoN Summary
 The DRAGoN algorithm is a series of Matlab scripts which segments a filamentous network from a fluorescence microscopy image (or stack of images). The centreline of the network is estimated and replaced with labelled pixel-thick lines, which are then analysed to provide several mathematical, physical and biological properties.
 
@@ -39,13 +42,9 @@ variables_filename  = "netProps.mat";
 ### MATLAB Requirements
 **Toolboxes:**
   + Image Processing Toolbox
-  + Statistics and Machine Learning Toolbox
 
-Minimum Version: r2018b
-***Recommended Version: r2022a***
 
-#### Compatibility Details
-For function compatibility *and* consistent behaviour, you will need *at least* MATLAB r2018b as well as the **Image Processing Toolbox** and the **Statistics and Machine Learning Toolbox**. Previous versions may run, but algorithm behavioural changes occurred and results may be sub-optimal. Tested and developed on r2019a, with some recent testing on r2022a also working.
+Minimum Version: r2018a
 
 # DRAGoN Function Information
 ```
